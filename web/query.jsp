@@ -31,18 +31,18 @@
 <body>
 <table>
     <tr>
-        <td>部门编号</td>
-        <td>部门名称</td>
-        <td>部门地址</td>
-        <td colspan="2">操作</td>
+        <td colspan="2">部门编号</td>
+        <td colspan="2">部门名称</td>
+        <td colspan="2">部门地址</td>
+        <td colspan="4">操作</td>
     </tr>
     <c:forEach items="${sessionScope.queryAllList}" var="dept">
         <tr>
             <td>${dept.deptno}<td/>
             <td>${dept.dname}<td/>
             <td>${dept.loc}<td/>
-            <td><a href="ts?i=4&deptno=${emp.empno}" onclick="return removeShow();">删除<a/><td/>
-            <td><a href="ts?i=6&deptno=${emp.empno}">修改<a/><td/>
+            <td><a href="ts?i=4&deptno=${dept.deptno}" onclick="return removeShow();">删除<a/>&nbsp
+                <a href="ts?i=6&deptno=${dept.deptno}&dname=${dept.dname}">修改<a/><td/>
         <tr/>
     </c:forEach>
 </table>

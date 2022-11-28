@@ -18,7 +18,6 @@
     </style>
 </head>
 <body>
-
 <c:forEach items="${sessionScope.queryOneList}" var="dept">
     <form action="ts?i=5&deptno=${dept.deptno}" method="post" style="color: cornflowerblue">
         <h3 style="color: cornflowerblue">修改</h3>

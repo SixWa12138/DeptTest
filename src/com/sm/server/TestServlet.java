@@ -108,9 +108,9 @@ public class TestServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
         DeptBizImpl dbi = new DeptBizImpl();
-        List<Dept> list1 = dbi.queryBiz();
+        List<Dept> list = dbi.queryBiz();
         HttpSession session = request.getSession();
-        session.setAttribute("queryAllList",list1);
+        session.setAttribute("queryAllList",list);
         response.sendRedirect("query.jsp");
     }
 
@@ -130,30 +130,12 @@ public class TestServlet extends HttpServlet {
     }
 
     public void revise(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        response.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
-        int deotno = Integer.parseInt(request.getParameter("deptno"));
-        String dname = request.getParameter("dname");
-        String loc = request.getParameter("loc");
-        DeptBizImpl dbi = new DeptBizImpl();
-        Dept dept = new Dept();
-        dept.setDeptno(deotno);
-        dept.setDname(dname);
-        dept.setLoc(loc);
-        boolean boo = dbi.reviseBiz(dept);
+        boolean boo = true;
         if (boo){
             System.out.println("修改成功");
-            response.sendRedirect("ts?i=2");
+            response.sendRedirect("ts?i=3");
         }else {
             System.out.println("修改失败");
-            int deptno1 = Integer.parseInt(request.getParameter("deptno"));
-            Dept dept1 = new Dept(deptno1,null,null);
-            Dept dept2 = dbi.queryOneBiz(dept1);
-            List<Dept> list = new ArrayList<>();
-            list.add(dept2);
-            HttpSession session = request.getSession();
-            session.setAttribute("queryOneList",list);
             response.sendRedirect("revise.jsp");
         }
     }

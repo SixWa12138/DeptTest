@@ -30,7 +30,7 @@ public class DeptDaoImpl implements IDeptDao {
         try {
             String sql = "select * from dept where deptno=? and dname=?";
             rs = queryMethod(sql,dept.getDeptno(),dept.getDname());
-            if (rs.next()){
+            while (rs.next()){
                 d = new Dept();
                 d.setDeptno(rs.getInt(1));
                 d.setDname(rs.getString(2));
@@ -46,12 +46,13 @@ public class DeptDaoImpl implements IDeptDao {
 
     @Override
     public List<Dept> queryDept() {
+
         List<Dept> list = new ArrayList<>();
         Dept d = null;
         try {
             String sql = "select * from dept";
             rs = queryMethod(sql);
-            if (rs.next()) {
+            while (rs.next()) {
                 d = new Dept();
                 d.setDeptno(rs.getInt(1));
                 d.setDname(rs.getString(2));
@@ -95,8 +96,8 @@ public class DeptDaoImpl implements IDeptDao {
 
     @Override
     public int update(Dept dept) {
-        String sql = "update dept set deptno=?,dname=?,loc=?";
-        int i = uniMethod(sql,dept.getDeptno(),dept.getDname(),dept.getLoc());
+        String sql = "update dept set dname=?,loc=? where deptno=?";
+        int i = uniMethod(sql,dept.getDname(),dept.getLoc(),dept.getDeptno());
         return i;
     }
 
