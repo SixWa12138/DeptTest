@@ -16,10 +16,11 @@ public interface IDeptBiz {
     List<Dept> queryBiz();
 
     //删除
-    boolean deleteBiz(Dept dept);
+    boolean removeBiz(Dept dept);
 
     //修改
-    boolean updateBiz(Dept dept);
+    boolean reviseBiz(Dept dept);
 
-
+    //查询一个
+    Dept queryOneBiz(Dept dept);
 }

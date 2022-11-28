@@ -13,6 +13,8 @@ import java.util.List;
  * @version: 1.0
  */
 public class DeptBizImpl implements IDeptBiz {
+    DeptDaoImpl ddi = new DeptDaoImpl();
+
     @Override
     public boolean loginBiz(Dept dept) {
         return false;
@@ -29,13 +31,17 @@ public class DeptBizImpl implements IDeptBiz {
     }
 
     @Override
-    public boolean deleteBiz(Dept dept) {
-        DeptDaoImpl ddi=new DeptDaoImpl();
+    public boolean removeBiz(Dept dept) {
         return ddi.delete(dept)==1?true:false;
     }
 
     @Override
-    public boolean updateBiz(Dept dept) {
+    public boolean reviseBiz(Dept dept) {
         return false;
+    }
+
+    @Override
+    public Dept queryOneBiz(Dept dept) {
+        return null;
     }
 }

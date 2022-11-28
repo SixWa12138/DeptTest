@@ -13,29 +13,60 @@ import java.io.IOException;
 public class TestServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        delete(req, resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        int i = Integer.parseInt(request.getParameter("i"));
+        if (i==1){
+
+        }else if (i==4){
+            delete(request,response);
+        }
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        delete(req, resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+
     }
-    public void delete(HttpServletRequest req, HttpServletResponse resp){
-        Dept dept=new Dept();
-        DeptBizImpl dbi=new DeptBizImpl();
-        int deptno=Integer.parseInt(req.getParameter("deptno"));
+    public void delete(HttpServletRequest request, HttpServletResponse response) {
+        Dept dept = new Dept();
+        DeptBizImpl dbi = new DeptBizImpl();
+        int deptno = Integer.parseInt(request.getParameter("deptno"));
         dept.setDeptno(deptno);
-        boolean boo=dbi.deleteBiz(dept);
-        if (boo){
+        boolean boo = dbi.removeBiz(dept);
+        if (boo) {
             System.out.println("删除成功");
-        }else{
+        } else {
             System.out.println("删除失败");
         }
+    }
+
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        super.service(request, response);
+    }
+
+    public void register(){
 
     }
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.service(req, resp);
+
+    public void login(){
+
+    }
+
+    public void query(){
+
+    }
+
+    public void update(){
+
+    }
+
+    public void queryOne(){
+
     }
 }
