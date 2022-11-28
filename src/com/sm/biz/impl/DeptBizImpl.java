@@ -17,7 +17,7 @@ public class DeptBizImpl implements IDeptBiz {
 
     @Override
     public boolean loginBiz(Dept dept) {
-        return ddi.query(dept)==null?true:false;
+        return ddi.query(dept)!=null?true:false;
     }
 
     @Override

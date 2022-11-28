@@ -95,11 +95,11 @@ public class TestServlet extends HttpServlet {
         boolean boo = dbi.loginBiz(dept);
         if (boo){
             System.out.println("登录成功");
-            response.sendRedirect("ts?i=2");
+            response.sendRedirect("ts?i=3");
         }else {
             System.out.println("登录失败");
-            response.getWriter().println("<h1 style='color: deepskyblue'>Login Failure!<h1/>");
-            response.getWriter().println("<a href='login.jsp'>Login again<a/>");
+            response.getWriter().println("登录失败，请重新登录！");
+            response.sendRedirect("ts?i=2");
         }
     }
 
