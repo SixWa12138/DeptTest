@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,7 +68,9 @@ public class DeptDaoImpl implements IDeptDao {
 
     @Override
     public int insert(Dept dept) {
-        return 0;
+        String sql = "insert into dept values(?,?,?)";
+        int num = uniMethod(sql,dept.getDeptno(),dept.getDname(),dept.getLoc());
+        return num;
     }
 
     @Override

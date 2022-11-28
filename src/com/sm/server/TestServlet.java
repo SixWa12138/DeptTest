@@ -64,7 +64,22 @@ public class TestServlet extends HttpServlet {
     }
 
     public void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        int deptno = Integer.parseInt(request.getParameter("deptno"));
+        String dname = request.getParameter("dname");
+        String loc = request.getParameter("loc");
+        DeptBizImpl dbi = new DeptBizImpl();
+        Dept dept = new Dept(deptno,dname,loc);
+        boolean boo = dbi.registerBiz(dept);
+        if (boo){
+            System.out.println("注册成功");
+            response.sendRedirect("login.jsp");
+        }else {
+            response.getWriter().println("注册失败");
+            response.getWriter().println("<a href='register.jsp'>重新注册</a>");
+        }
     }
 
     public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

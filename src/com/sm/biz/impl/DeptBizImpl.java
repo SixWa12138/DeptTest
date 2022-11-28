@@ -22,7 +22,7 @@ public class DeptBizImpl implements IDeptBiz {
 
     @Override
     public boolean registerBiz(Dept dept) {
-        return false;
+        return ddi.insert(dept)==1?true:false;
     }
 
     @Override
