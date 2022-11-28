@@ -17,6 +17,23 @@
     </style>
 </head>
 <body>
-
+<form action="emp" method="post" style="color: cornflowerblue">
+    <h3 style="color: cornflowerblue">注册</h3>
+    <table>
+        <tr>
+            <td>部门编号：</td>
+            <td><input type="text" name="deptno"></td>
+        </tr>
+        <tr>
+            <td>部门名称：</td>
+            <td><input type="text" name="dname"></td>
+        </tr>
+        <tr>
+            <td>部门地址：</td>
+            <td><input type="text" name="loc"></td>
+        </tr>
+    </table>
+    <input type="submit" value="注册">
+</form>
 </body>
 </html>

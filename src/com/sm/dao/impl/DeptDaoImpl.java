@@ -92,7 +92,9 @@ public class DeptDaoImpl implements IDeptDao {
 
     @Override
     public int update(Dept dept) {
-        return 0;
+        String sql = "update dept set deptno=?,dname=?,loc=?";
+        int i = uniMethod(sql,dept.getDeptno(),dept.getDname(),dept.getLoc());
+        return i;
     }
 
     @Override

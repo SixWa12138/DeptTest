@@ -17,7 +17,7 @@ public class DeptBizImpl implements IDeptBiz {
 
     @Override
     public boolean loginBiz(Dept dept) {
-        return false;
+        return ddi.query(dept)==null?true:false;
     }
 
     @Override
@@ -27,12 +27,12 @@ public class DeptBizImpl implements IDeptBiz {
 
     @Override
     public List<Dept> queryBiz() {
-        return null;
+        return ddi.queryDept();
     }
 
     @Override
     public Dept queryOneBiz(Dept dept) {
-        return null;
+        return ddi.query(dept);
     }
 
     @Override
@@ -42,6 +42,6 @@ public class DeptBizImpl implements IDeptBiz {
 
     @Override
     public boolean reviseBiz(Dept dept) {
-        return false;
+        return ddi.update(dept)==1?true:false;
     }
 }
