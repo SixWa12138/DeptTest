@@ -2,7 +2,13 @@ package com.sm.dao.impl;
 
 import com.sm.dao.IDeptDao;
 import com.sm.entry.Dept;
+import com.sm.util.DBHelper;
 
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -29,7 +35,22 @@ public class DeptDaoImpl implements IDeptDao {
 
     @Override
     public int delete(Dept dept) {
-        return 0;
+        Connection con=null;
+        int i=0;
+        try {
+            con=DBHelper.getCollection();
+            String sql="delete from dept where deptno=?";
+            i=uniMethod(sql,dept.getDeptno());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            DBHelper.closeAll(con,null,null);
+        }
+        return i;
     }
 
     @Override

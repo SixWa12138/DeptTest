@@ -1,6 +1,7 @@
 package com.sm.biz.impl;
 
 import com.sm.biz.IDeptBiz;
+import com.sm.dao.impl.DeptDaoImpl;
 import com.sm.entry.Dept;
 
 import java.util.List;
@@ -29,7 +30,8 @@ public class DeptBizImpl implements IDeptBiz {
 
     @Override
     public boolean deleteBiz(Dept dept) {
-        return false;
+        DeptDaoImpl ddi=new DeptDaoImpl();
+        return ddi.delete(dept)==1?true:false;
     }
 
     @Override

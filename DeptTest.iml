@@ -38,5 +38,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lib (2)" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://E:/Program Files (x86)/apache-tomcat-8.5.83/lib/servlet-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
