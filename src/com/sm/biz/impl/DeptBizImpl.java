@@ -31,6 +31,11 @@ public class DeptBizImpl implements IDeptBiz {
     }
 
     @Override
+    public Dept queryOneBiz(Dept dept) {
+        return null;
+    }
+
+    @Override
     public boolean removeBiz(Dept dept) {
         return ddi.delete(dept)==1?true:false;
     }
@@ -38,10 +43,5 @@ public class DeptBizImpl implements IDeptBiz {
     @Override
     public boolean reviseBiz(Dept dept) {
         return false;
-    }
-
-    @Override
-    public Dept queryOneBiz(Dept dept) {
-        return null;
     }
 }

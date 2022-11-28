@@ -19,9 +19,15 @@ public class TestServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         int i = Integer.parseInt(request.getParameter("i"));
         if (i==1){
-
+            register(request,response);
+        }else if (i==2){
+            login(request,response);
+        }else if (i==3){
+            query(request,response);
         }else if (i==4){
             delete(request,response);
+        }else if (i==5){
+            update(request,response);
         }
     }
 
@@ -30,8 +36,37 @@ public class TestServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
+        int i = Integer.parseInt(request.getParameter("i"));
+        if (i==1){
+            register(request,response);
+        }else if (i==2){
+            login(request,response);
+        }else if (i==3){
+            query(request,response);
+        }else if (i==4){
+            delete(request,response);
+        }else if (i==5){
+            update(request,response);
+        }
+    }
+
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        super.service(request, response);
+    }
+
+    public void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+    public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    public void query(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
     public void delete(HttpServletRequest request, HttpServletResponse response) {
         Dept dept = new Dept();
         DeptBizImpl dbi = new DeptBizImpl();
@@ -45,28 +80,11 @@ public class TestServlet extends HttpServlet {
         }
     }
 
-    @Override
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        super.service(request, response);
-    }
-
-    public void register(){
+    public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
-    public void login(){
-
-    }
-
-    public void query(){
-
-    }
-
-    public void update(){
-
-    }
-
-    public void queryOne(){
+    public void queryOne(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }
