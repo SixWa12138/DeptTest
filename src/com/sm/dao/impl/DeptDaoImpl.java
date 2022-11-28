@@ -1,7 +1,7 @@
-package com.sm.util.dao.impl;
+package com.sm.dao.impl;
 
+import com.sm.dao.IDeptDao;
 import com.sm.entry.Dept;
-import com.sm.util.dao.IDeptDao;
 
 import java.util.List;
 

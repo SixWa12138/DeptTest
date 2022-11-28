@@ -1,4 +1,4 @@
-package com.sm.util.dao;
+package com.sm.dao;
 
 import com.sm.entry.Dept;
 

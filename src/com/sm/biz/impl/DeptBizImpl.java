@@ -1,4 +1,4 @@
-package com.sm.biz.com.sm.biz.impl;
+package com.sm.biz.impl;
 
 import com.sm.biz.IDeptBiz;
 import com.sm.entry.Dept;
