@@ -2,6 +2,7 @@ package com.sm.dao;
 
 import com.sm.entry.Dept;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 public interface IDeptDao {
@@ -23,4 +24,7 @@ public interface IDeptDao {
 
     //增删改通用方法
     int uniMethod(String sql,Object...objs);
+
+    //查通用方法
+    ResultSet queryMethod(String sql,Object...objs);
 }

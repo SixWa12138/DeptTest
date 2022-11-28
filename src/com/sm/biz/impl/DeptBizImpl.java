@@ -1,6 +1,7 @@
 package com.sm.biz.impl;
 
 import com.sm.biz.IDeptBiz;
+import com.sm.dao.impl.DeptDaoImpl;
 import com.sm.entry.Dept;
 
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.List;
  * @version: 1.0
  */
 public class DeptBizImpl implements IDeptBiz {
+    DeptDaoImpl ddi = new DeptDaoImpl();
+
     @Override
     public boolean loginBiz(Dept dept) {
-        return false;
+        return ddi.query(dept)==null?true:false;
     }
 
     @Override
@@ -24,7 +27,7 @@ public class DeptBizImpl implements IDeptBiz {
 
     @Override
     public List<Dept> queryBiz() {
-        return null;
+        return ddi.queryDept();
     }
 
     @Override
