@@ -66,7 +66,7 @@ public class DeptDaoImpl implements IDeptDao {
     }
 
     @Override
-    public int add(Dept dept) {
+    public int insert(Dept dept) {
         return 0;
     }
 

@@ -31,12 +31,17 @@ public class DeptBizImpl implements IDeptBiz {
     }
 
     @Override
-    public boolean deleteBiz(Dept dept) {
+    public boolean removeBiz(Dept dept) {
         return false;
     }
 
     @Override
-    public boolean updateBiz(Dept dept) {
+    public boolean reviseBiz(Dept dept) {
         return false;
+    }
+
+    @Override
+    public Dept queryOneBiz(Dept dept) {
+        return null;
     }
 }

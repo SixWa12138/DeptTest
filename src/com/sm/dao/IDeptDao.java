@@ -14,7 +14,7 @@ public interface IDeptDao {
     List<Dept> queryDept();
 
     //注册添加
-    int add(Dept dept);
+    int insert(Dept dept);
 
     //注销删除
     int delete(Dept dept);
