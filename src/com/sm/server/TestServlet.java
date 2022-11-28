@@ -130,7 +130,18 @@ public class TestServlet extends HttpServlet {
     }
 
     public void revise(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean boo = true;
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("textcml;charset=utf-8");
+        int deotno = Integer.parseInt(request.getParameter("deptno"));
+        String dname = request.getParameter("dname");
+        String loc = request.getParameter("loc");
+        DeptBizImpl dbi = new DeptBizImpl();
+        Dept dept = new Dept();
+        dept.setDeptno(deotno);
+        dept.setDname(dname);
+        dept.setLoc(loc);
+        boolean boo = dbi.reviseBiz(dept);
         if (boo){
             System.out.println("修改成功");
             response.sendRedirect("ts?i=3");
